@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "prettier",
+    "plugin:react/recommended"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 9,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": ["react"],
+  "rules": {
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-uses-vars": [2],
+    "no-console": 0,
+    "react/jsx-uses-react": 1,
+    "prettier/prettier": ["error"]
+  }
+}
