@@ -10,7 +10,7 @@ class Directory extends Component {
 				title: 'hats',
 				imageUrl: 'https://i.ibb.co/cvpntL1/hats.png',
 				id: 1,
-				linkUrl: 'hats',
+				linkUrl: 'shop/hats',
 			},
 			{
 				title: 'jackets',
