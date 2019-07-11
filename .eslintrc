@@ -2,7 +2,8 @@
   "env": {
     "browser": true,
     "es6": true,
-    "commonjs": true
+    "commonjs": true,
+    "jest": true
   },
   "extends": [
     "eslint:recommended",
@@ -24,6 +25,7 @@
     "react/jsx-uses-vars": [2],
     "no-console": 0,
     "react/jsx-uses-react": 1,
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "jsx-quotes": ["error", "prefer-single"]
   }
 }
