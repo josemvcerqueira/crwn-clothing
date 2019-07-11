@@ -1,13 +1,14 @@
 import React from "react";
 
-import HomePage from "./HomePage";
+import "./App.scss";
+import HomePage from "./pages/homepage/HomePage";
 
 const App = props => {
-  return (
-    <div>
-      <HomePage />
-    </div>
-  );
+	return (
+		<div>
+			<HomePage />
+		</div>
+	);
 };
 
 export default App;
