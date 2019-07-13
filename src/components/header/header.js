@@ -8,6 +8,7 @@ import { auth } from '../../firebase/firebase.utils';
 
 const header = ({ currentUser }) => {
 	const logOut = () => auth.signOut();
+	console.log(currentUser);
 	return (
 		<div className="header">
 			<Link className="logo-container" to="/">
@@ -38,7 +39,4 @@ const mapStateToProps = state => ({
 	currentUser: state.user.currentUser,
 });
 
-export default connect(
-	mapStateToProps,
-	null
-)(header);
+export default connect(mapStateToProps)(header);

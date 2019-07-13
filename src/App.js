@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './App.scss';
@@ -27,7 +27,7 @@ class App extends Component {
 					});
 				});
 			} else {
-				setCurrentUser({ userAuth });
+				setCurrentUser(userAuth);
 			}
 		});
 	}
@@ -36,25 +36,37 @@ class App extends Component {
 		this.unsubscribeFromAuth();
 	}
 
+	handleSignInRedirect = () =>
+		console.log(this.props.currentUser) || this.props.currentUser ? (
+			<Redirect to="/" />
+		) : (
+			<SignInAndSignUpPage />
+		);
+
 	render() {
+		const { handleSignInRedirect } = this;
 		return (
 			<div>
 				<Header />
 				<Switch>
 					<Route exact path="/" component={HomePage} />
 					<Route path="/shop" component={ShopPage} />
-					<Route path="/signin" component={SignInAndSignUpPage} />
+					<Route exact path="/signin" render={handleSignInRedirect} />
 				</Switch>
 			</div>
 		);
 	}
 }
 
+const mapStateToProps = ({ user }) => ({
+	currentUser: user.currentUser,
+});
+
 const mapDispatchToProps = dispatch => ({
 	setCurrentUser: user => dispatch(setCurrentUser(user)),
 });
 
 export default connect(
-	null,
+	mapStateToProps,
 	mapDispatchToProps
 )(App);
