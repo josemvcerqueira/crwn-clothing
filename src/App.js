@@ -15,7 +15,7 @@ import { checkUserSession } from './redux/user/user.actions';
 const App = ({ currentUser, checkUserSession }) => {
 	useEffect(() => {
 		checkUserSession();
-	});
+	}, []);
 
 	const handleSignInRedirect = () =>
 		currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />;
