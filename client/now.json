@@ -2,6 +2,9 @@
   "version": 2,
   "name": "crwn-clothing",
   "alias": "crwn-clothing",
+  "env": {
+    "STRIPE_API_KEY": "sk_test_7MUM1EJz6hM3MqpCjoXv3lJj00XbSpTv66"
+  },
   "builds": [
     {
       "src": "package.json",
